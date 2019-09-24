@@ -9,12 +9,17 @@ This application was developed to allow Rangers to track wildlife sightings in t
 # Setup
 To create the necessary databases, launch postgres, then psql, and run the following commands:
 
-CREATE DATABASE wildlife_tracker; 
-\c wildlife_tracker;
-CREATE TABLE animals (id serial PRIMARY KEY, name varchar);
-CREATE TABLE endangered_animals (id serial PRIMARY KEY, name varchar, health varchar, age varchar);
-CREATE TABLE sightings (id serial PRIMARY KEY, animal_id int, location varchar, ranger_name varchar);
-CREATE DATABASE wildlife_tracker_test WITH TEMPLATE wildlife_tracker;
+- CREATE DATABASE wildlife_tracker; 
+
+- \c wildlife_tracker;
+
+- CREATE TABLE animals (id serial PRIMARY KEY, name varchar);
+
+- CREATE TABLE endangered_animals (id serial PRIMARY KEY, name varchar, health varchar, age varchar);
+
+- CREATE TABLE sightings (id serial PRIMARY KEY, animal_id int, location varchar, ranger_name varchar);
+
+- CREATE DATABASE wildlife_tracker_test WITH TEMPLATE wildlife_tracker;
 
 # License
 Copyright (c) 2019 AngeIngabire License
