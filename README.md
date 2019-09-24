@@ -9,7 +9,7 @@ This application was developed to allow Rangers to track wildlife sightings in t
 # Setup
 To create the necessary databases, launch postgres, then psql, and run the following commands:
 
-CREATE DATABASE wildlife_tracker;
+CREATE DATABASE wildlife_tracker; 
 \c wildlife_tracker;
 CREATE TABLE animals (id serial PRIMARY KEY, name varchar);
 CREATE TABLE endangered_animals (id serial PRIMARY KEY, name varchar, health varchar, age varchar);
