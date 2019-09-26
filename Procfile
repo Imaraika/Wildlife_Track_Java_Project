@@ -1,0 +1,1 @@
+web: ./build/install/inkoko_d/bin/inkoko_d

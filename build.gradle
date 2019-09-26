@@ -1,5 +1,6 @@
 plugins {
     id 'java'
+    id 'application'
 }
 
 group 'MY IP'
@@ -21,3 +22,7 @@ dependencies {
     compile group: 'org.sql2o', name: 'sql2o', version: '1.5.4'
     compile group: 'org.postgresql', name: 'postgresql', version: "9.4-1201-jdbc41"
 }
+applicationName = "inkoko_d"
+mainClassName = 'App'
+task stage(dependsOn: ['clean', 'installDist'])
+
