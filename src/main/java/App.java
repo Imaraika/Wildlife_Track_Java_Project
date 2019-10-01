@@ -13,10 +13,10 @@ public class App {
 
         get("/", (Route) (request, response) -> {
             Map<String, Object> model = new HashMap<String, Object>();
-            model.put("animals", Animal.all());
-            model.put("endangeredAnimals", EndangeredAnimal.all());
-            model.put("sightings", Sighting.all());
-            model.put("template", "templates/index.vtl");
+            model.put("Angesanimals", Animal.all());
+            model.put("AngesendangeredAnimals", EndangeredAnimal.all());
+            model.put("Angessightings", Sighting.all());
+            model.put("templateAnge", "templates/index.vtl");
             return new ModelAndView(model, layout);
         }, new VelocityTemplateEngine());
 
@@ -31,7 +31,7 @@ public class App {
             model.put("animals", EndangeredAnimal.all());
             String animal = EndangeredAnimal.find(animalIdSelected).getName();
             model.put("animal", animal);
-            model.put("template", "templates/success.vtl");
+            model.put("templateAnge", "templates/success.vtl");
             return new ModelAndView(model, layout);
         }, new VelocityTemplateEngine());
 
@@ -46,7 +46,7 @@ public class App {
             model.put("animals", Animal.all());
             String animal = Animal.find(animalIdSelected).getName();
             model.put("animal", animal);
-            model.put("template", "templates/success.vtl");
+            model.put("templateAnge", "templates/success.vtl");
             return new ModelAndView(model, layout);
         }, new VelocityTemplateEngine());
 
@@ -54,7 +54,7 @@ public class App {
             Map<String, Object> model = new HashMap<String, Object>();
             model.put("animals", Animal.all());
             model.put("endangeredAnimals", EndangeredAnimal.all());
-            model.put("template", "templates/animal-form.vtl");
+            model.put("templateAnge", "templates/animal-form.vtl");
             return new ModelAndView(model, layout);
         }, new VelocityTemplateEngine());
 
@@ -84,7 +84,7 @@ public class App {
             Map<String, Object> model = new HashMap<String, Object>();
             Animal animal = Animal.find(Integer.parseInt(request.params("id")));
             model.put("animal", animal);
-            model.put("template", "templates/animal.vtl");
+            model.put("templateAnge", "templates/animal.vtl");
             return new ModelAndView(model, layout);
         }, new VelocityTemplateEngine());
 
@@ -92,13 +92,13 @@ public class App {
             Map<String, Object> model = new HashMap<String, Object>();
             EndangeredAnimal endangeredAnimal = EndangeredAnimal.find(Integer.parseInt(request.params("id")));
             model.put("endangeredAnimal", endangeredAnimal);
-            model.put("template", "templates/endangered-animal.vtl");
+            model.put("templateAnge", "templates/endangered-animal.vtl");
             return new ModelAndView(model, layout);
         }, new VelocityTemplateEngine());
 
         get("/error", (Route) (request, response) -> {
             Map<String, Object> model = new HashMap<String, Object>();
-            model.put("template", "templates/error.vtl");
+            model.put("templateAnge", "templates/error.vtl");
             return new ModelAndView(model, layout);
         }, new VelocityTemplateEngine());
     }
