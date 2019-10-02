@@ -6,9 +6,9 @@
 #if($animal.getSightings().size() == 0)
   <p>To report a sighting, please visit the <a href="/">home page</a>.</p>
 #else
-  #foreach($sighting in $animal.getSightings())
-    Location: $sighting.getLocation()
-    Reported by: $sighting.getRangerName()
-    ID: >$sighting.getId()
+  #foreach($sighting in $animal.getSightings())<br>
+    Location: $sighting.getLocation()<br><br>
+    Reported by: $sighting.getRangerName()<br>
+    ID: $sighting.getId()
   #end
 #end
